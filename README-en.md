@@ -1,5 +1,8 @@
-# PPAdminWeb
+# vueAdmin-template
 
+> A vue admin template with Element UI & axios & iconfont & permission control & lint
+
+**Live demo:** http://panjiachen.github.io/vueAdmin-template
 
 ## Build Setup
 
@@ -23,3 +26,5 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+## Demo
+![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
