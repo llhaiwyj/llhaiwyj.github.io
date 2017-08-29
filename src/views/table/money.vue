@@ -34,7 +34,7 @@
       </el-table-column>
       <el-table-column label="昵称" width="80" align="center">
         <template scope="scope">
-          <el-button type="text" @click=zn(scope.row.identify)>{{scope.row.nick_name}} </el-button>
+          <el-button type="text" @click=handlerClickBank(scope.row.identify)>{{scope.row.nick_name}} </el-button>
         </template>
       </el-table-column>
       <el-table-column label="头像" width="220" align="center">
@@ -60,7 +60,8 @@
 </template>
 
 <script>
-  import { getUserList, getUserBack } from '@/api/table';
+  import { getUserBack } from '@/api/table';
+  
   
   export default {
     data() {
@@ -68,9 +69,8 @@
       return {
         list: null,
         listLoading: true,
-        totals: 0,
-        qian:null
-      };
+        totals: 0, 
+      }
     },
     created() {
       this.fetchData({
@@ -84,20 +84,16 @@
           page: val
         })
       },
-      zn:function (index) {
-//    	alert(index)
-      getUserBack({
+      handlerClickBank (index)  {
+      	alert(index)
+      	getUserBack({
           identify: index
-       }).then(e => {
-        	console.log(e.detail.balance)
-        	this.$alert( e.detail.balance ,'您的余额', {})
-       })
-    	  
-     },
+      	});
+    	this.$alert( '您的余额', {})
+      },
       fetchData(params) {
         this.listLoading = true;
         getUserList(params).then(response => {
-        	console.log(response)
           this.list = response.detail.list;
           this.totals = response.detail.totals;
           this.listLoading = false;

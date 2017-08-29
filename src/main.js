@@ -12,10 +12,14 @@ import 'normalize.css/normalize.css'
 import '@/assets/iconfont/iconfont'
 import IconSvg from '@/components/Icon-svg/index.vue'
 import { getToken } from '@/utils/auth'
+import echarts from 'echarts'
+import $ from 'jquery'
+import VueResource from 'vue-resource'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
+Vue.use(VueResource)
 Vue.component('icon-svg', IconSvg)
 
 const whiteList = ['/login'];

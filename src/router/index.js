@@ -18,6 +18,7 @@ const Err404 = _import('404');
 /* demo page */
 const Form = _import('page/form');
 const Table = _import('table/index');
+const Zn = _import('zn/zn');
 
 Vue.use(Router);
 
@@ -68,6 +69,14 @@ export const asyncRouterMap = [
     noDropdown: true,
     children: [{ path: 'index', component: Table, name: '用户查询', meta: { role: ['super'] } }]
   },
-
+{
+    path: '/zn',
+    component: Layout,
+    redirect: '/zn/zn',
+    name: 'Zn',
+    icon: 'tubiaoleixingzhengchang',
+    noDropdown: true,
+    children: [{ path: 'zn', component:Zn, name: '余额提现', meta: { role: ['super'] } }]
+},
   { path: '*', redirect: '/404', hidden: true }
 ];
